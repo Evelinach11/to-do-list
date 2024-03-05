@@ -34,6 +34,9 @@ const TodoList = () => {
     }
   }, [todos, filterType]);
 
+  const completedCount = todos.filter((todo) => todo.completed).length;
+  const uncompletedCount = todos.length - completedCount;
+
   return (
     <Box className="todoListContainer">
       {todos.length === 0 ? (
@@ -42,6 +45,9 @@ const TodoList = () => {
         </Typography>
       ) : (
         <Box>
+          <Typography sx={{ mt: 2 }} variant="subtitle1">
+            Completed: {completedCount} | Uncompleted: {uncompletedCount}
+          </Typography>
           <List>
             {filteredTodos.map(({ id, text, completed }) => (
               <ListItem key={id}>
@@ -49,7 +55,11 @@ const TodoList = () => {
                   checked={completed}
                   onChange={() => handleToggle(id)}
                 />
-                <ListItemText primary={text} />
+                <ListItemText
+                  primary={text}
+                  sx={{ color: completed ? "text.disabled" : "text.primary" }}
+                  disabled={completed}
+                />
               </ListItem>
             ))}
           </List>

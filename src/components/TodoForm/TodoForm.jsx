@@ -10,8 +10,17 @@ const TodoForm = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(addTodo(data.text));
-    reset();
+    const text = data.text.trim();
+    const maxLength = 16;
+
+    if (text.length <= maxLength) {
+      dispatch(addTodo(text));
+      reset();
+    } else {
+      alert(
+        `Error: Case text length must be less than or equal to ${maxLength} characters.`
+      );
+    }
   };
 
   return (
