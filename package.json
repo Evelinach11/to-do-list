@@ -12,7 +12,6 @@
     "@wemake-services/eslint-config-javascript": "^2.1.1",
     "@wemake-services/eslint-config-jest": "^2.1.1",
     "@wemake-services/eslint-config-jsdoc": "^2.1.1",
-    "@wemake-services/eslint-config-typescript": "^3.1.1",
     "@wemake-services/eslint-config-vue": "^3.1.1",
     "eslint": "^8.57.0",
     "react": "^18.2.0",
@@ -28,12 +27,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

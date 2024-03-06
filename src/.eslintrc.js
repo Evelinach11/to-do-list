@@ -1,3 +1,6 @@
 module.exports = {
-  extends: ["@wemake-services/eslint-config-jest"],
+  extends: [
+    "@wemake-services/eslint-config-jest",
+    "@wemake-services/javascript",
+  ],
 };
